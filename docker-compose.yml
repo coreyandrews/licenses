@@ -1,0 +1,16 @@
+services:
+  licenses-tracker:
+    container_name: licenses
+    build: .
+    restart: unless-stopped
+    ports:
+      - '8037:80'
+    volumes:
+      - data:/var/www/html/data
+      - uploads:/var/www/html/uploads
+
+volumes:
+  data:
+    name: licenses_data
+  uploads:
+    name: licenses_uploads
